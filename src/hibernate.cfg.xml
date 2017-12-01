@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--配置数据库配置信息-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/customer</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456hao123</property>
+
+        <!--配置hibernate基本信息-->
+
+        <!--配置数据库方言dialect-->
+        <property name="dialect">org.hibernate.dialect.MySQL55Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!--指定自动生成表的策略 update表示如果没有表则新建，有的话就不管-->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--映射文件-->
+        <mapping resource="cn/collabtech/hibernate/CustomerEntity.hbm.xml"></mapping>
+        
+    </session-factory>
+</hibernate-configuration>
